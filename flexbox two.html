@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout with Reduced Gaps</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: white;
+            border: 1px solid black; /* Border around the entire layout */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            border: 1px solid black; /* Border around header */
+            margin: 2px;
+            padding: 10px;
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 2px; /* Reduced gap */
+        }
+
+        .small-box {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        .rectangle-box {
+            width: 45px;
+            height: 25px;
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 2px; /* Reduced gap */
+        }
+
+        /* Main Content Section */
+        .main-content {
+            display: flex;
+            flex: 1;
+            margin: 2px;
+            gap: 2px; /* Reduced gap between grids and aside */
+            border: 1px solid black; /* Border around main content */
+        }
+
+        /* Left 2x2 grid (updated for 4 boxes in 2x2 layout) */
+        .left-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            grid-template-rows: repeat(2, 1fr); /* 2 rows */
+            gap: 2px; /* Reduced gap */
+            flex: 0 0 40%; /* Width of the left grid */
+            border: 1px solid black; /* Border around left grid */
+            padding: 10px;
+            justify-items: center; /* Center the items horizontally */
+            align-items: center; /* Center the items vertically */
+        }
+
+        /* Right 3x6 grid */
+        .right-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 6 columns */
+            grid-template-rows: repeat(3, 1fr); /* 3 rows */
+            gap: 2px; /* Gap between boxes */
+            flex: 0 0 40%; /* Make this section wider */
+            border: 1px solid black; /* Border around right grid */
+            padding: 10px;
+        }
+        .leftgridbox {
+            background-color: white;
+            border: 1px solid black;
+            height: 150px; /* Height of the box */
+            width: 180px; /* Width of the box */
+        }
+
+        /* Box styles */
+        .box {
+            background-color: white;
+            border: 1px solid black;
+            height: 50px; /* Height of the box */
+            width: 50px; /* Width of the box */
+        }
+
+        /* Aside Section */
+        .aside {
+            flex: 0 0 20%; /* Fixed width for aside */
+            border-left: 1px solid black; /* Border around aside */
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px; /* Reduced gap */
+        }
+
+        .rectangle-box-aside {
+            width: 100%; /* Adjust to fill the aside width */
+            height: 25px;
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        /* Footer */
+        .footer-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 2px;
+            gap: 2px; /* Reduced gap between footers */
+        }
+
+        footer {
+            background-color: white;
+            border: 1px solid black; /* Border around footer */
+            padding: 10px;
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer + footer {
+            border-top: 1px solid black;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .footer-first {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .footer-first .small-box {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        .footer-second {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-second .small-box {
+            margin: 2px;
+            width: 2vw;
+            height: 2vw;
+            background-color: red;
+            border: 1px solid black;
+        }
+
+        .footer-second p {
+            margin-top: 10px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .footer-wrapper {
+                flex-direction: column;
+            }
+
+            header, footer {
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="small-box"></div>
+            <span>FLEXBOX</span>
+        </div>
+
+        <div class="header-right">
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Left 2x2 Grid (4 boxes in the middle) -->
+        <div class="left-grid">
+            <div class="leftgridbox"></div>
+            <div class="leftgridbox"></div>
+            <div class="leftgridbox"></div>
+            <div class="leftgridbox"></div>
+        </div>
+
+        <!-- Right 3x6 Grid with 15 Boxes -->
+        <div class="right-grid">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+        <div class="aside">
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+            <div class="rectangle-box-aside"></div>
+        </div>
+    </div>
+
+    <!-- First Footer -->
+    <div class="footer-wrapper">
+        <footer class="footer-first">
+            <div class="small-box"></div>
+            <span>FLEXBOX</span>
+        </footer>
+        <!-- Second Footer -->
+        <footer class="footer-second">
+            <div class="small-box"></div>
+            <div class="small-box"></div>
+            <div class="small-box"></div>
+            <div class="small-box"></div>
+            <div class="small-box"></div>
+            <p>© Copy All rights reserved</p>
+        </footer>
+    </div>
+</body>
+</html>
