@@ -20,7 +20,7 @@
 
         header {
             background-color: white;
-            border: 2px solid black;
+            border: 1px solid black; /* Changed border to match the rectangle-box inside aside */
             margin: 2px;
             padding: 10px;
             height: 10vh;
@@ -58,7 +58,7 @@
             display: flex;
             flex: 1;
             margin: 2px;
-            height: 70vh;
+            height: calc(100vh - 20vh); /* Adjusted height to account for header and footer */
         }
 
         .main {
@@ -66,7 +66,7 @@
             display: flex;
             flex-direction: column;
             gap: 2px;
-            border: 2px solid black;
+            border: 1px solid black; /* Updated to match rectangle-box border */
             margin-right: 2px;
             padding: 4px;
         }
@@ -76,7 +76,7 @@
             flex-wrap: wrap;
             gap: 2px;
             padding: 10px;
-            border: 2px solid black;
+            border: 1px solid black; /* Updated to match rectangle-box border */
             margin-bottom: 10px;
             flex: 1;
             height: 60%;
@@ -86,7 +86,7 @@
             width: 65px;
             height: 65px;
             background-color: white;
-            border: 1px solid black;
+            border: 1px solid black; /* Updated to match rectangle-box border */
         }
 
         .bottom-container {
@@ -94,7 +94,7 @@
             flex-direction: row; 
             gap: 10px;
             padding: 10px;
-            border: 2px solid black;
+            border: 1px solid black; /* Updated to match rectangle-box border */
             flex: 1;
             height: 40%;
             justify-content: space-between;
@@ -103,12 +103,12 @@
         .bottom-box {
             flex: 0 0 20%;
             height: 150px; 
-            border: 1px solid black;
+            border: 1px solid black; /* Updated to match rectangle-box border */
         }
 
         .aside {
             flex: 0 0 10%;
-            border: 2px solid black;
+            border: 1px solid black; /* Updated to match rectangle-box border */
             padding: 5px;
             display: flex;
             flex-direction: column; 
@@ -117,14 +117,12 @@
         }
 
         .rectangle-box-aside {
-            width: calc(100% - 10px);
             width: 250px;
             height: 25px;
             background-color: white;
-            border: 1px solid black;
+            border: 1px solid black; /* Updated to match rectangle-box border */
         }
 
-       
         .footer-wrapper {
             display: flex;
             flex-direction: column;
@@ -133,7 +131,7 @@
 
         footer {
             background-color: white;
-            border: 2px solid black;
+            border: 1px solid black; /* Updated to match rectangle-box border */
             border-bottom: none;
             padding: 10px;
             height: 10vh;
@@ -169,25 +167,6 @@
             gap: 1px;
         }
 
-       
-        .main-content {
-            height: calc(100vh - 20vh);
-        }
-
-       
-        @media screen and (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-
-            .footer-wrapper {
-                flex-direction: column;
-            }
-
-            header, footer {
-                height: auto;
-            }
-        }
     </style>
 </head>
 <body>
