@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLEXBOX 1</title>
+    <title>FLEXBOX 3</title>
     <style>
         * {
             margin: 0;
@@ -16,14 +16,15 @@
             flex-direction: column;
             height: 100vh;
             background-color: white;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden; 
         }
 
         header {
             background-color: white;
             border: 1px solid black;
-            padding: 10px;
-            height: 10vh;
+            margin: 2px;
+            padding: 2px;
+            height: 45px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -51,35 +52,55 @@
 
         .header-right {
             display: flex;
-            gap: 2px;
+            gap: 2px; 
         }
 
         .main-content {
             display: flex;
             flex: 1;
             margin: 2px;
-            height: calc(100vh - 20vh); /* Adjust for header and footer */
+            height: calc(100vh - 45px - 45px); 
+            gap: 2px;
+            overflow: hidden; 
         }
 
         .main {
-            flex: 1;
+            flex: 3;
             display: flex;
-            flex-direction: row;
-            gap: 2px;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid black;
+            justify-content: center; 
+            align-items: center; 
+            gap: 2px; 
+            height: 100%;
+            border: 1px solid black; 
+            margin-right: 2px;
             padding: 4px;
-            overflow: hidden; /* Prevent overflow */
+            background-color: white;
         }
 
-        .aside-left, .aside-right {
-            flex: 0 0 10%;
+        .main .box {
+            width: 80px; 
+            height: 170px;
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .asideleft {
+            flex: 0 0 15%;
+            border: 1px solid black; 
+            padding: 5px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            gap: 2px;
+            
+        }
+        .asideright {
+            flex: 0 0 15%;
             border: 1px solid black;
             padding: 5px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: column; 
+            align-items: center; 
             gap: 2px;
         }
 
@@ -90,9 +111,9 @@
             border: 1px solid black;
         }
 
-        .rectangleboxright {
-            width: 200px;
-            height: 200px;
+        .rectangle-box-asideright {
+            width: 180px;
+            height: 180px;
             background-color: white;
             border: 1px solid black;
         }
@@ -105,10 +126,10 @@
 
         footer {
             background-color: white;
-            border: 1px solid black;
+            border: 1px solid black; 
             border-bottom: none;
-            padding: 10px;
-            height: 10vh;
+            padding: 2px;
+            height: 45px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -140,28 +161,6 @@
             display: flex;
             gap: 1px;
         }
-
-        .mainbox {
-            margin: 1px;
-            width: 70px;
-            height: 200px;
-            background-color: white;
-            border: 1px solid black;
-        }
-
-        @media screen and (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-
-            .footer-wrapper {
-                flex-direction: column;
-            }
-
-            header, footer {
-                height: auto;
-            }
-        }
     </style>
 </head>
 <body>
@@ -174,12 +173,13 @@
         <div class="header-right">
             <div class="rectangle-box"></div>
             <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
         </div>
     </header>
 
     <div class="main-content">
-        <!-- Left aside -->
-        <div class="aside-left">
+        <div class="asideleft">
             <div class="rectangle-box-aside"></div>
             <div class="rectangle-box-aside"></div>
             <div class="rectangle-box-aside"></div>
@@ -191,21 +191,18 @@
             <div class="rectangle-box-aside"></div>
             <div class="rectangle-box-aside"></div>
         </div>
-
-        <!-- Main content area with 5 boxes -->
         <div class="main">
-            <div class="mainbox"></div>
-            <div class="mainbox"></div>
-            <div class="mainbox"></div>
-            <div class="mainbox"></div>
-            <div class="mainbox"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
         </div>
-
-        <!-- Right aside -->
-        <div class="aside-right">
-            <div class="rectangleboxright"></div>
-            <div class="rectangleboxright"></div>
-            <div class="rectangleboxright"></div>
+        <div class="asideright">
+            <div class="rectangle-box-asideright"></div>
+            <div class="rectangle-box-asideright"></div>
+            <div class="rectangle-box-asideright"></div>
         </div>
     </div>
 
@@ -218,7 +215,7 @@
                 <div class="small-box"></div>
                 <div class="small-box"></div>
             </div>
-            <p>© Copyright All rights reserved.</p>
+            <p>Copyright Flexbox</p>
         </footer>
     </div>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Layout with Reduced Gaps</title>
+    <title>FLEXBOX 2</title>
     <style>
         * {
             margin: 0;
@@ -16,17 +16,14 @@
             flex-direction: column;
             height: 100vh;
             background-color: white;
-            border: 1px solid black; 
-            overflow: hidden;
         }
 
-        /* Header */
         header {
             background-color: white;
             border: 1px solid black;
             margin: 2px;
-            padding: 10px;
-            height: 10vh;
+            padding: 2px;
+            height: 45px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -35,166 +32,178 @@
         .header-left {
             display: flex;
             align-items: center;
-            gap: 2px; 
+            gap: 10px;
         }
 
         .small-box {
             width: 40px;
             height: 40px;
             background-color: red;
-            border: 1px solid black;
+            border: none;
         }
 
         .rectangle-box {
             width: 45px;
             height: 25px;
             background-color: red;
-            border: 1px solid black;
+            border: none;
         }
 
         .header-right {
             display: flex;
-            gap: 2px; 
+            gap: 2px;
         }
 
-        
         .main-content {
             display: flex;
             flex: 1;
-            margin: 2px;
-            gap: 2px; 
-            border: 1px solid black; 
+            margin: 0px;
+            height: 45px;
         }
 
-        
-        .left-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            grid-template-rows: repeat(2, 1fr); 
-            gap: 2px; 
-            flex: 0 0 40%; 
-            border: 1px solid black;
-            padding: 10px;
-            justify-items: center; 
-            align-items: center; 
-        }
-
-        
-        .right-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            grid-template-rows: repeat(3, 1fr); 
+        .main {
+            flex: 3;
+            display: flex;
+            flex-direction: row;
             gap: 2px;
-            flex: 0 0 40%;
-            background-color: white;
             border: 1px solid black;
+            margin-right: 2px;
             padding: 2px;
         }
-        .leftgridbox {
-            background-color: white;
-            border: 1px solid black;
-            height: 150px; 
-            width: 180px; 
+        .horizontal-containers {
+            display: flex;
+            flex-direction: row; 
+            gap: 2px; 
+            flex: 1;
+            width: 100%; 
         }
-
-        
-        .box {
-            background-color: white;
+        .horizontal-containerright {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 3px; 
             border: 1px solid black;
-            height: 50px; 
-            width: 50px;
+            padding: 5px;
+            align-items: flex-start;
         }
-
-        
-        .aside {
-            flex: 0 0 20%; 
-            border-left: 1px solid black; 
+        .horizontal-containerleft {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px; 
+            flex: 1;
+            border: 1px solid black; 
             padding: 10px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+        }
+        .small-boxright {
+            width: 65px;
+            height: 65px;
+            background-color: white;
+            border: 1px solid black;
+        }
+        .small-boxleft {
+            width: 200px;
+            height: 150px;
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .aside {
+            flex: 0 0 5%;
+            border: 1px solid black;
+            padding: 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2px; 
+            gap: 2px;
         }
 
         .rectangle-box-aside {
-            width: 100%; 
+            width: 250px;
             height: 25px;
             background-color: white;
             border: 1px solid black;
         }
 
-       
         .footer-wrapper {
             display: flex;
             flex-direction: column;
             margin: 2px;
-            gap: 2px; 
         }
 
         footer {
             background-color: white;
             border: 1px solid black;
-            padding: 10px;
-            height: 10vh;
+            border-bottom: none;
+            padding: 2px;
+            height: 45px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         footer + footer {
-            border-top: 1px solid black;
+            border-top: 1px solid #ddd;
         }
 
         footer p {
             margin: 0;
         }
 
-        .footer-first {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 10px;
-        }
-
-        .footer-first .small-box {
-            width: 40px;
-            height: 40px;
-            background-color: red;
-            border: 1px solid black;
-        }
-
         .footer-second {
             display: flex;
-            flex-direction: row;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
         }
 
         .footer-second .small-box {
-            margin: 2px;
-            width: 2vw;
-            height: 2vw;
+            margin: 1px;
+            width: 1.5vw;
+            height: 1.5vw;
             background-color: red;
-            border: 1px solid black;
         }
 
-        .footer-second p {
-            margin-top: 10px;
+        .footer-second .small-box-container {
+            display: flex;
+            gap: 1px;
         }
-
-       
-        @media screen and (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-
-            .footer-wrapper {
-                flex-direction: column;
-            }
-
-            header, footer {
-                height: auto;
-            }
+        .row{
+            display: flex;
+            gap: 2px;
+            flex-direction: column;
+        }
+        .row2{
+            display: flex;
+            gap: 2px;
+            flex-direction: column;
+        }
+        .row3{
+            display: flex;
+            gap: 2px;
+            flex-direction: column;
+        }
+        .row4{
+            display: flex;
+            gap: 2px;
+            flex-direction: column;
+        }
+        .row5{
+            display: flex;
+            gap: 2px;
+            flex-direction: column;
+        }
+        .row6{
+            display: flex;
+            gap: 2px;
+            flex-direction: column;
         }
     </style>
 </head>
@@ -212,31 +221,48 @@
     </header>
 
     <div class="main-content">
-       
-        <div class="left-grid">
-            <div class="leftgridbox"></div>
-            <div class="leftgridbox"></div>
-            <div class="leftgridbox"></div>
-            <div class="leftgridbox"></div>
-        </div>
-
-        
-        <div class="right-grid">
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
+        <div class="main">
+            <div class="horizontal-containers">
+                <div class="horizontal-containerleft">
+                    <div class="column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                    </div>
+                    <div class="column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                    </div>
+                </div>
+                <div class="horizontal-containerright">
+                    <div class="row">
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                    </div>
+                    <div class="row2">
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                    </div>
+                    <div class="row3">
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                    </div>
+                    <div class="row4">
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                    </div>
+                    <div class="row5">
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                    </div>
+                    <div class="row6">
+                        <div class="small-boxright"></div>
+                        <div class="small-boxright"></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="aside">
@@ -253,20 +279,23 @@
         </div>
     </div>
 
-    
     <div class="footer-wrapper">
-        <footer class="footer-first">
-            <div class="small-box"></div>
-            <span>FLEXBOX</span>
+        <footer>
+            <div class="header-left">
+                <div class="small-box"></div>
+                <span>FLEXBOX</span>
+            </div>
+            <div></div>
         </footer>
-       
         <footer class="footer-second">
-            <div class="small-box"></div>
-            <div class="small-box"></div>
-            <div class="small-box"></div>
-            <div class="small-box"></div>
-            <div class="small-box"></div>
-            <p>© Copy All rights reserved</p>
+            <div class="small-box-container">
+                <div class="small-box"></div>
+                <div class="small-box"></div>
+                <div class="small-box"></div>
+                <div class="small-box"></div>
+                <div class="small-box"></div>
+            </div>
+            <p>© Copyright All rights reserved.</p>
         </footer>
     </div>
 </body>

@@ -3,44 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FLEXBOX 9</title>
 
     <style>
-        
-        *{
+        * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
         }
-        .Header{
-            display: flex;
-            border: 1px solid black;
-            gap: 3px;
-        }
-        .H{
-            display: flex;
-            flex-direction: row;
-        }
-        .logo{
-            margin: 3px;
-            background-color: red;
-            height: 40px;
-            width: 40px;
-        }
-        .smallbox{
-            display: flex;
-            flex-direction: row-reverse;
-            gap: 3px;
-            flex-grow: 1;
-            padding: 7px;
-        }
-        .topbox{
-            background-color: red;
-            height: 20px;
-            width: 50px;
+
+        body {
+            overflow-x: hidden; 
         }
 
-        .container{
+        header {
+            background-color: white;
+            border: 1px solid black; 
+            margin: 2px;
+            padding: 3px;
+            height: 45px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden; 
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 4px; 
+        }
+
+        .small-box {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 2px;
+            justify-content: flex-end; 
+            width: 180px; 
+        }
+
+        .rectangle-box {
+            width: 45px;
+            height: 25px;
+            background-color: red;
+            border: none;
+        }
+
+        .container {
             display: flex;
             gap: 3px;
             padding: 3px;
@@ -48,7 +62,7 @@
             flex-grow: 1;
         }
 
-        .aside{
+        .aside {
             border: 1px solid black;
             display: flex;
             flex-direction: column;
@@ -57,18 +71,20 @@
             height: 90vh;
         }
 
-        .asidebox{
+        .asidebox {
             border: 1px solid black;
             height: 5vh;
             width: 15vw;
         }
-        .main{
+
+        .main {
             display: flex;
             flex-grow: 1;
             border: 1px solid black;
             flex-direction: column;
         }
-        .rectangle{
+
+        .rectangle {
             display: flex;
             flex-direction: column;
             gap: 3px;
@@ -76,34 +92,56 @@
             flex-grow: 1;
             align-items: center;
         }
-        .rectanglebox{
+
+        .rectanglebox {
             display: flex;
             border: 1px solid black;
             height: 15vh;
             width: 70vw;
             margin-bottom: 10px;
         }
-        .footer{
+
+        .footer {
             display: flex;
             border: 1px solid black;
-            gap: 3px;
+            gap: 0px;
             padding: 3px;
+            justify-content: space-between;
+            align-items: center;
         }
-        .foot{
+
+        .foot {
             display: flex;
+            gap: 0px; 
+            align-items: center; 
         }
-        .Foootbox{
+
+        .Foootbox {
             background-color: red;
             height: 40px;
             width: 40px;
         }
-        .footbox{
+
+        .teext {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5px; 
+        }
+
+        .copyright, .coopyright {
+            font-size: 14px;
+            color: black;
+            margin: 0; 
+        }
+
+        .footbox {
             display: flex;
             flex-grow: 1;
             flex-direction: row-reverse;
-            gap: 3px;
+            gap: 2px;
         }
-        .footerbox{
+
+        .footerbox {
             background-color: red;
             height: 15px;
             width: 15px;
@@ -114,18 +152,19 @@
 </head>
 <body>
     
-    <div class="Header">
-        <div class="H">
-        <div class="logo"></div>
-        <div>FLEXBOX</div>
+    <header>
+        <div class="header-left">
+            <div class="small-box"></div>
+            <span>FLEXBOX</span>
         </div>
-        <div class="smallbox">
-        <div class="topbox"></div>
-        <div class="topbox"></div>
-        <div class="topbox"></div>
-        <div class="topbox"></div>
+
+        <div class="header-right">
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
         </div>
-    </div>
+    </header>
 
     <div class="container">
         <div class="aside">
@@ -149,11 +188,11 @@
             <div class="footer">
                 <div class="foot">
                     <div class="Foootbox"></div>
-                <div class="teext">
-                    <div class="copyright">FLEXBOX</div>
-                    <div class="coopyright">COPYRIGHT FLEXBOX</div>
+                    <div class="teext">
+                        <div class="copyright">FLEXBOX</div>
+                        <div class="coopyright">COPYRIGHT FLEXBOX</div>
+                    </div>
                 </div>
-            </div>
 
                 <div class="footbox">
                     <div class="footerbox"></div>
