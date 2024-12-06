@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLEXBOX 4</title>
+    <title>FLEXBOX 5</title>
     <style>
         * {
             margin: 0;
@@ -18,21 +18,35 @@
             background-color: white;
         }
 
+        /* Style for both headers */
         header {
             background-color: white;
             border: 1px solid black;
             margin: 2px;
             padding: 2px;
-            height: 45px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            height: 80px;
+            position: relative;
+        }
+
+        /* Header content container */
+        .header-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            position: absolute;
+            top: 3px;
         }
 
         .header-left {
             display: flex;
-            align-items: center;
             gap: 10px;
+            justify-content: center;
+            align-items: center;
         }
 
         .small-box {
@@ -45,13 +59,16 @@
         .rectangle-box {
             width: 45px;
             height: 25px;
-            background-color: blue;
+            background-color: red;
             border: none;
         }
 
         .header-right {
             display: flex;
             gap: 2px;
+            position: absolute;
+            bottom: 5px;
+            justify-content: center;
         }
 
         .main-content {
@@ -64,51 +81,53 @@
         .main {
             flex: 3;
             display: flex;
-            flex-direction: row;
-            gap: 2px;
+            flex-direction: column;
+            gap: 50px;
             border: 1px solid black;
             margin-right: 2px;
             padding: 2px;
+            justify-content: center;
+            align-items: center; 
         }
-
         .horizontal-containers {
             display: flex;
-            flex-direction: row; 
-            gap: 150px; /* Set the gap between the two child containers to 20px */
-            justify-content: center; /* Align the child containers to the center */
-            width: 100%; 
-            flex: 1;
-        }
-
-        .horizontal-containerright, .horizontal-containerleft {
-            width: 280px; /* Reduce the width */
-            height: 190px; /* Reduce the height */
-            border: 1px solid black;
-            display: flex;
+            flex-direction: row;
+            gap: 170px; 
             justify-content: center;
-            align-items: center;
-            flex-direction: column; /* Ensure child elements are stacked vertically */
+            width: 800px; 
+            height: 220px;
         }
-
-        .right-container {
-            width: 100%;
-            height: 100%;
+        .horizontal-containerright, .horizontal-containerleft {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap; 
+            gap: 3px; 
+            border: 1px solid black;
+            padding: 5px;
+            align-items: flex-start;
+            margin-right: 10px;
+        }
+        .horizontal-containerright {
+            margin-left: 10px; 
+        }
+        .left-column {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 10px;
+            padding: 2px;
+            gap: 5px;
         }
-        .left-container{
-            width: 100%;
-            height: 100%;
+        .right-column {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 10px;
+            padding: 2px;
+            gap: 5px;
         }
-        
+        .small-boxleft {
+            width: 65px;
+            height: 65px;
+            background-color: white;
+            border: 1px solid black;
+        }
 
         .main-box-title {
             font-size: 15px;
@@ -123,86 +142,126 @@
             align-items: center;
             gap: 2px;
         }
-
         .rectangle-box-aside {
             width: 200px;
             height: 25px;
             background-color: white;
             border: 1px solid black;
         }
-
         .footer-wrapper {
             display: flex;
             flex-direction: column;
             margin: 2px;
         }
-
         footer {
             background-color: white;
             border: 1px solid black;
-            border-bottom: none;
+            border-bottom: 1px solid black;
             padding: 2px;
             height: 45px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .footer-second {
+        .footer-left {
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-direction: column;
-            border-top: 1px solid black;  /* Added border-top to footer-second */
-            padding: 5px;
-            border-bottom: 1px solid black;
+            gap: 5px; 
+            height: 100%;
+            justify-content: center; 
         }
-
-        .footer-second .small-box {
-            margin: 1px;
+        .footer-left .small-box {
+            width: 40px; 
+            height: 40px;
+            background-color: red;
+        }
+        .footer-left .text-content {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5px; 
+        }
+        .footer-right {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 2px;
+            padding: 2px;
+        }
+        .footer-right .small-box {
             width: 1.5vw;
             height: 1.5vw;
             background-color: red;
         }
-
-        .footer-second .small-box-container {
-            display: flex;
-            gap: 1px;
-        }
-        .small{
+        .small {
             width: 260px;
             height: 175px;
             background-color: white;
-            border: 1px solid black; 
+            border: 1px solid black;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <div class="small-box"></div>
-            <span>FLEXBOX</span>
+    <div class="header-line"></div>
+    <header class="header2">
+        <div class="header-container">
+            <div class="header-left">
+                <div class="small-box"></div>
+                <span>FLEXBOX</span>
+            </div>
         </div>
 
         <div class="header-right">
             <div class="rectangle-box"></div>
             <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
+            <div class="rectangle-box"></div>
         </div>
     </header>
-
     <div class="main-content">
         <div class="main">
             <div class="horizontal-containers">
                 <div class="horizontal-containerleft">
-                    <div class="left-container">
-                        <span class="main-box-title">Main Box1</span>
-                        <div class="small"></div> <!-- Example box inside the right container -->
+                    <div class="left-column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                    </div>
+                    <div class="right-column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                    </div>
+                    <div class="right-column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                    </div>
+                    <div class="right-column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
                     </div>
                 </div>
                 <div class="horizontal-containerright">
-                    <!-- New container inside the horizontal-containerright -->
-                    <div class="right-container">
-                        <span class="main-box-title">Main Box1</span>
-                        <div class="small"></div> <!-- Example box inside the right container -->
+                    <div class="left-column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                    </div>
+                    <div class="right-column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                    </div>
+                    <div class="right-column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
+                    </div>
+                    <div class="right-column">
+                        <div class="small-boxleft"></div>
+                        <div class="small-boxleft"></div>
                     </div>
                 </div>
             </div>
@@ -222,23 +281,23 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <div class="footer-wrapper">
         <footer>
-            <div class="header-left">
+            <div class="footer-left">
                 <div class="small-box"></div>
-                <span>FLEXBOX</span>
+                <div class="text-content">
+                    <span class="flexbox-text">FLEXBOX</span> 
+                    <span class="copy-right-text">Copy All rights reserved</span> 
+                </div>
             </div>
-            <div></div>
-        </footer>
-        <footer class="footer-second">
-            <div class="small-box-container">
+            <div class="footer-right">
                 <div class="small-box"></div>
                 <div class="small-box"></div>
                 <div class="small-box"></div>
                 <div class="small-box"></div>
                 <div class="small-box"></div>
             </div>
-            <p>© Copyright All rights reserved.</p>
         </footer>
     </div>
 </body>
