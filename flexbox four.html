@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLEXBOX 2</title>
+    <title>FLEXBOX 4</title>
     <style>
         * {
             margin: 0;
@@ -45,7 +45,7 @@
         .rectangle-box {
             width: 45px;
             height: 25px;
-            background-color: red;
+            background-color: blue;
             border: none;
         }
 
@@ -70,49 +70,48 @@
             margin-right: 2px;
             padding: 2px;
         }
+
         .horizontal-containers {
             display: flex;
             flex-direction: row; 
-            gap: 2px; 
-            flex: 1;
+            gap: 150px; /* Set the gap between the two child containers to 20px */
+            justify-content: center; /* Align the child containers to the center */
             width: 100%; 
-        }
-        .horizontal-containerright {
             flex: 1;
-            display: flex;
-            flex-wrap: wrap; 
-            gap: 3px; 
-            border: 1px solid black;
-            padding: 5px;
-            align-items: flex-start;
         }
-        .horizontal-containerleft {
+
+        .horizontal-containerright, .horizontal-containerleft {
+            width: 280px; /* Reduce the width */
+            height: 190px; /* Reduce the height */
+            border: 1px solid black;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 5px; 
-            flex: 1;
-            border: 1px solid black; 
-            padding: 10px;
+            flex-direction: column; /* Ensure child elements are stacked vertically */
         }
 
-        .column {
+        .right-container {
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            justify-content: flex-start;
             align-items: center;
+            padding: 10px;
         }
-        .small-boxright {
-            width: 65px;
-            height: 65px;
-            background-color: white;
-            border: 1px solid black;
+        .left-container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
         }
-        .small-boxleft {
-            width: 200px;
-            height: 150px;
-            background-color: white;
-            border: 1px solid black;
+        
+
+        .main-box-title {
+            font-size: 15px;
         }
 
         .aside {
@@ -148,13 +147,13 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .footer-second {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            border-top: 1px solid black;
+            border-top: 1px solid black;  /* Added border-top to footer-second */
+            padding: 5px;
             border-bottom: 1px solid black;
         }
 
@@ -169,35 +168,11 @@
             display: flex;
             gap: 1px;
         }
-        .row{
-            display: flex;
-            gap: 2px;
-            flex-direction: column;
-        }
-        .row2{
-            display: flex;
-            gap: 2px;
-            flex-direction: column;
-        }
-        .row3{
-            display: flex;
-            gap: 2px;
-            flex-direction: column;
-        }
-        .row4{
-            display: flex;
-            gap: 2px;
-            flex-direction: column;
-        }
-        .row5{
-            display: flex;
-            gap: 2px;
-            flex-direction: column;
-        }
-        .row6{
-            display: flex;
-            gap: 2px;
-            flex-direction: column;
+        .small{
+            width: 260px;
+            height: 175px;
+            background-color: white;
+            border: 1px solid black; 
         }
     </style>
 </head>
@@ -218,42 +193,16 @@
         <div class="main">
             <div class="horizontal-containers">
                 <div class="horizontal-containerleft">
-                    <div class="column">
-                        <div class="small-boxleft"></div>
-                        <div class="small-boxleft"></div>
-                    </div>
-                    <div class="column">
-                        <div class="small-boxleft"></div>
-                        <div class="small-boxleft"></div>
+                    <div class="left-container">
+                        <span class="main-box-title">Main Box1</span>
+                        <div class="small"></div> <!-- Example box inside the right container -->
                     </div>
                 </div>
                 <div class="horizontal-containerright">
-                    <div class="row">
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
-                    </div>
-                    <div class="row2">
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
-                    </div>
-                    <div class="row3">
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
-                    </div>
-                    <div class="row4">
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
-                    </div>
-                    <div class="row5">
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
-                    </div>
-                    <div class="row6">
-                        <div class="small-boxright"></div>
-                        <div class="small-boxright"></div>
+                    <!-- New container inside the horizontal-containerright -->
+                    <div class="right-container">
+                        <span class="main-box-title">Main Box1</span>
+                        <div class="small"></div> <!-- Example box inside the right container -->
                     </div>
                 </div>
             </div>
